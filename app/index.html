@@ -6,23 +6,24 @@
 		<link rel="stylesheet" type="text/css" href="css/libs.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/sprite.css">
+		<link rel="stylesheet" type="text/css" href="css/adaptive.css">
 		<script src="js/libs.min.js"></script>
 	</head>
 	<body>
 		<div class="layout">
-			<div class="layout__row layout__slider">
+			<div class="layout__row layout__slider" id="main">
 				<div class="header">
 					<div class="layout__cell layout__flex header__flex">
 						<div class="header__logo">Gapcoin.io</div>
 						<div class="header__menu">
 							<ul class="header__menu--horizontal">
-								<li class="menu__item"><a href="#">Главная</a></li>
-								<li class="menu__item"><a href="#">О нас</a></li>
-								<li class="menu__item"><a href="#">Рынок</a></li>
-								<li class="menu__item"><a href="#">Инвесторам</a></li>
-								<li class="menu__item"><a href="#">Токены</a></li>
-								<li class="menu__item"><a href="#">Roadmap</a></li>
-								<li class="menu__item"><a href="#">Гарантии</a></li>
+								<li class="menu__item"><a href="#main">Главная</a></li>
+								<li class="menu__item"><a href="#about">О нас</a></li>
+								<li class="menu__item"><a href="#info">Рынок</a></li>
+								<li class="menu__item"><a href="#investors">Инвесторам</a></li>
+								<li class="menu__item"><a href="#tokens">Токены</a></li>
+								<li class="menu__item"><a href="#roadmap">Roadmap</a></li>
+								<li class="menu__item"><a href="#garant">Гарантии</a></li>
 							</ul>
 						</div>
 					</div>
@@ -33,7 +34,7 @@
 						<div class="welcome">
 							<div class="welcome__title">Площадка нового поколения</div>
 							<div class="welcome__description">Спортивные и киберспортивные пари без участия третьих сторон</div>
-							<a href="#" class="welcome__button">Присоединиться</a>
+							<a href="#" class="welcome__button" onclick="OpenModal()">Присоединиться</a>
 						</div>
 				    </div>
 				    <div class="slider__item">
@@ -41,7 +42,7 @@
 						<div class="welcome">
 							<div class="welcome__title">Первый в своем роде</div>
 							<div class="welcome__description">Первый в мире покер-рум без каких-либо финансовых удержаний в игре</div>
-							<div class="welcome__button">Присоединиться</div>
+							<a href="#" class="welcome__button" onclick="OpenModal()">Присоединиться</a>
 						</div>
 				    </div>
 				    <div class="slider__item">
@@ -49,7 +50,7 @@
 						<div class="welcome">
 							<div class="welcome__title">Game DAO Constructor</div>
 							<div class="welcome__description">Владельцы токенов принимают решение, какие игры внедрять в конструктор</div>
-							<div class="welcome__button">Присоединиться</div>
+							<a href="#" class="welcome__button" onclick="OpenModal()">Присоединиться</a>
 						</div>
 				    </div>
 				 	<div class="slider__item">
@@ -57,16 +58,16 @@
 						<div class="welcome">
 							<div class="welcome__title">Blockchain gambling</div>
 							<div class="welcome__description">Блокчейн с готовой площадкой и активными пользователями для сторонних разработчков игровой индустрии</div>
-							<div class="welcome__button">Присоединиться</div>
+							<a href="#" class="welcome__button" onclick="OpenModal()">Присоединиться</a>
 						</div>
 				    </div>
 				</div>
-				<a href="#particles-js" class="button__down">
+				<a href="#about" class="button__down">
 					<div class="button__down__text">Листать вниз</div>
 					<div class="button__down__arrow"></div>
 				</a>
 			</div>
-			<div class="layout__row layout__about" id="particles-js">
+			<div class="layout__row layout__about" id="about">
 				<div class="layout__cell">
 					<div class="about__title">Gapcoin.io - это</div>
 					<div class="about__description">
@@ -74,7 +75,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__advantages">
+			<div class="layout__row layout__advantages" id="advantages">
 				<div class="layout__cell">
 					<div class="advantages__title">Преимущества</div>
 					<div class="layout__flex">
@@ -100,7 +101,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__mission">
+			<div class="layout__row layout__mission" id="mission">
 				<div class="layout__cell">
 					<div class="layout__flex">
 						<div class="mission__item mission__image">
@@ -117,7 +118,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__info">
+			<div class="layout__row layout__info" id="info">
 				<div class="layout__cell">
 					<div class="info__title">Информация о рынке</div>
 					<div class="layout__flex">
@@ -158,7 +159,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__goal">
+			<div class="layout__row layout__goal" id="goal">
 				<div class="layout__cell">
 					<div class="layout__flex">
 						<div class="goal__item goal__item--margin-right">
@@ -175,7 +176,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__investors">
+			<div class="layout__row layout__investors" id="investors">
 				<div class="layout__cell">
 					<div class="layout__flex">
 						<div class="investors__item investors__item--left">
@@ -204,7 +205,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__tokens">
+			<div class="layout__row layout__tokens" id="tokens">
 				<div class="layout__cell">
 					<div class="tokens__title">Распределение токенов</div>
 					<div class="tokens__description">
@@ -283,7 +284,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__features">
+			<div class="layout__row layout__features" id="features">
 				<div class="layout__cell">
 					<div class="layout__flex">
 						<div class="features__item">
@@ -310,13 +311,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="layout__row layout__sells">
+			<div class="layout__row layout__sells" id="sells">
 				<div class="layout__cell">
 					Продажа: срок сбора на ICO 31 день, после чего привлечения заканчиваются или сразу после продажи заданного количества токенов 
 					<br>Выход на биржу: срок выхода на биржу не более 31 день после окончания ICO
 				</div>
 			</div>
-			<div class="layout__row layout__roadmap">
+			<div class="layout__row layout__roadmap" id="roadmap">
 				<div class="layout__cell">
 					<div class="roadmap__title">Roadmap</div>
 					<div class="roadmap__line">
@@ -376,7 +377,7 @@
 				</div>
 			</div>
 
-			<div class="layout__row layout__modes">
+			<div class="layout__row layout__modes" id="modes">
 				<div class="layout__cell">
 					<div class="layout__flex">
 						<div class="modes__item">
@@ -412,7 +413,7 @@
 				</div>
 			</div>
 
-			<div class="layout__row layout__garant">
+			<div class="layout__row layout__garant" id="garant">
 				<div class="layout__cell">
 					<div class="layout__flex">
 						<div class="garant__item garant__item--left">							
@@ -433,7 +434,7 @@
 				</div>
 			</div>
 
-			<div class="layout__row layout__social">
+			<div class="layout__row layout__social" id="social">
 				<div class="layout__cell">
 					<a href="#" class="social__item">+</a>
 					<a href="#" class="social__item">+</a>
@@ -445,6 +446,27 @@
 			</div>
 
 			<footer class="footer">AIP Inc. 2017 год</footer>
+
+			<div class="modal-window modal-window--closed">
+				<div class="modal-window__cover"></div>
+				<div class="modal-window__body">
+					<div class="modal-window__close" onclick="CloseModal()"></div>
+					<div class="body__title">Вступи в GAPCOIN.IO прямо сейчас</div>
+					<form>
+						<div class="form__row">
+							<label for="name">Имя</label>
+							<input id="name" type="text">
+						</div>
+						<div class="form__row">
+							<label for="email">Email</label>
+							<input id="email" type="text">
+						</div>
+						<div class="form__row">
+							<button>Отправить заявку</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 		<script src="js/scripts.min.js"></script>
 	</body>
