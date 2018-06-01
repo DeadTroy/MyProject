@@ -1,0 +1,934 @@
+@mixin border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius:    $radius
+	-ms-border-radius:     $radius
+	border-radius:         $radius
+
+@font-face 
+	font-family: 'GillSans'
+	src: url('../fonts/GillSans.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+@font-face 
+	font-family: 'Gilroy'
+	src: url('../fonts/Gilroy-Light.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+@font-face 
+	font-family: 'Gilroy-Bold'
+	src: url('../fonts/Gilroy-Bold.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+@font-face 
+	font-family: 'Helvetica'
+	src: url('../fonts/Helvetica.otf')
+	font-weight: normal
+	font-style: normal
+
+html, body
+	margin: 0
+	padding: 0
+	
+body  
+	background: #fff
+	color: #fff
+
+.--hidden
+	opacity: 0
+.--visible
+	opacity: 1
+
+.slider__item
+	background: #333
+	height: 906px
+	position: relative
+
+	.welcome
+		position: absolute
+		top: 250px
+		left: 0
+		right: 0
+		text-align: center
+
+		.welcome__title 
+			max-width: 550px
+			margin: 0 auto
+			font-family: Gilroy
+			font-size: 38px
+			font-weight: 800
+			font-style: normal
+			font-stretch: normal
+			line-height: normal
+			letter-spacing: 0.2px
+			padding-left: 400px
+			transition: padding 1000ms
+
+		.welcome__description
+			max-width: 520px
+			margin: 26px auto 0 auto
+			font-family: GillSans
+			font-size: 27px
+			font-weight: 300
+			font-style: normal
+			font-stretch: normal
+			line-height: 1.04
+			letter-spacing: normal
+			opacity: 0
+			transition: opacity 3000ms
+
+		.welcome__button 
+			width: 260px
+			margin: 25px auto 0 auto
+			line-height: 60px
+			@include border-radius(36.5px)
+			background-image: linear-gradient(183deg, #5b36fd, #ec0e36)
+			box-shadow: 0 8px 53px 0 rgba(255, 0, 81, 0.31), inset 0 -5px 1px 0 #ad002c
+			padding-bottom: 5px
+			font-family: GillSans
+			font-size: 23px
+			font-weight: 600
+			font-style: normal
+			font-stretch: normal
+			letter-spacing: 0.1px
+			text-shadow: 0 1px 1px #9e0028
+			text-align: center
+			color: #fff
+			text-decoration: none
+			display: block
+
+.layout__row
+	position: relative
+
+
+.layout__cell
+	width: 100%
+	max-width: 1440px
+	margin: 0 auto
+	padding: 0 20px
+	box-sizing: border-box
+
+.layout__flex
+	display: flex
+	align-items: top
+
+.header 
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 5
+	font-family: 'GillSans'
+	background: rgba(0,0,0,0)
+	transition: background 200ms
+
+	.header__flex
+		height: 150px
+		align-items: center
+		transition: height 200ms
+
+	.header__logo
+		text-transform: uppercase
+		flex: 1
+		font-size: 18px
+		font-weight: bold
+		cursor: default
+		display: inline-block
+
+		a
+			font-style: normal
+			font-stretch: normal
+			line-height: normal
+			letter-spacing: 0.1px
+
+	.header__menu
+		display: inline-block
+
+		.menu__item
+			display: inline-block
+
+			a
+				font-style: normal
+				font-stretch: normal
+				line-height: normal
+				letter-spacing: 0.1px
+				color: #fff
+				text-decoration: none
+				padding: 0px 15px
+				font-size: 19px
+				font-weight: normal
+
+		&--horizontal
+			list-style: none
+
+.slick-active
+	button			
+		border: 1px dashed #eb2256 !important
+
+	.welcome
+		.welcome__title
+			padding-left: 0px
+						
+		.welcome__description
+			opacity: 1
+
+
+.slick-dots
+	position: absolute
+	bottom: 200px
+	left: 0
+	right: 0
+	display: block
+	width: 100%
+	padding: 0
+	margin: 0
+	list-style: none
+	text-align: center
+
+	li
+		display: inline-block
+
+		button
+			display: inline-block
+			cursor: pointer
+			border: 0
+			outline: none
+			@include border-radius(70%)
+			background: transparent
+			font-family: GillSans
+			font-size: 18px
+			font-weight: 600
+			font-style: normal
+			font-stretch: normal
+			line-height: normal
+			letter-spacing: 0.1px
+			text-align: center
+			color: #ffffff
+			padding: 5px 10px
+			margin: 0 10px
+
+			&:before
+				content: inherit !important
+
+.button__down
+	position: absolute
+	left: 0
+	bottom: 25px
+	right: 0
+	width: 125px
+	margin: 0 auto
+	cursor: pointer
+	color: #fff
+	text-decoration: none
+
+	.button__down__text
+		margin-bottom: 5px
+		text-align: center
+		transition: margin 200ms
+		font-family: GillSans
+		font-size: 12px
+		font-weight: 600
+		text-transform: uppercase
+
+	.button__down:hover
+		.button__down__text
+			margin-bottom: 7px
+
+	.button__down__arrow
+		width: 24px
+		margin: 0 auto
+		height: 24px
+		border-right: solid 2px #fff
+		border-bottom: solid 2px #fff
+		transform: rotate(45deg)
+		transform-origin: 50% 50%
+
+.layout__about
+	background-color: #d30f3f
+	text-align: center
+	padding: 80px 0
+	display: block
+	cursor: default
+
+	.about__title
+		text-transform: uppercase
+		font-family: Gilroy
+		font-size: 30px
+		font-weight: 800
+		margin: 10px 0
+
+	.about__description
+		font-family: Helvetica
+		font-size: 20px
+		font-weight: 300
+		line-height: 1.3
+  
+.layout__about 
+	canvas 
+		position: absolute
+		top: 0
+		left: 0
+		overflow: hidden
+		height: inherit
+
+.layout__advantages
+	background-color: #bf0c37
+	text-align: center
+	padding: 80px 0
+	display: block
+	cursor: default
+
+	.advantages__title
+		text-transform: uppercase
+		font-weight: 800
+		font-family: Helvetica
+		font-size: 28px
+		margin: 10px 0
+
+	.advantages__item
+		flex: 1
+		background: #fff
+		margin: 10px
+		color: #333
+		@include border-radius(9px)
+		box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.11)
+		padding: 50px 5px
+		position: relative
+
+		.item__title
+			font-family: GillSans
+			font-size: 22px
+			font-weight: 600
+			line-height: 1.09
+			text-align: center
+			margin: 23px 0 34px 0
+
+		.item__description
+			font-family: Helvetica
+			font-size: 16px
+			font-weight: 300
+			line-height: 1.5
+			text-align: left
+
+		.item__list
+			list-style: none
+			li
+				position: relative
+
+			li:before
+				content: ''
+				position: absolute
+				top: 5px
+				left: -15px
+				@include border-radius(60%)
+				width: 8px
+				height: 8px
+				border: 1px solid #333
+
+		.item__dice
+			position: absolute
+			bottom: -100px
+			right: -100px
+
+.layout__mission
+	background-color: #fff
+	text-align: center
+	padding: 80px 0
+	display: block
+	cursor: default
+
+	.mission__item
+		flex: 1
+		margin: 10px
+		color: #333
+		position: relative
+
+	.mission__image
+		position: relative
+		margin-right: 100px
+		.image__text
+			position: absolute
+			bottom: 100px
+			right: 20px
+			background: #2f2f2f
+			font-family: Helvetica
+			font-size: 32px
+			font-weight: bold
+			line-height: 1
+			color: #ffffff
+			text-transform: uppercase
+			width: 200px
+			height: 200px
+			@include border-radius(60%)
+
+			&--padding
+				padding-top: 65px
+
+	.mission__description
+		font-family: Helvetica
+		font-size: 16px
+		font-weight: 300
+		line-height: 1.53
+		text-align: left
+		color: #333
+
+
+
+.layout__info
+	background-color: #fff
+	text-align: center
+	padding: 80px 0
+	display: block
+	color: #333
+
+	.info__title
+		text-transform: uppercase
+		font-weight: 800
+		font-family: Helvetica
+		font-size: 28px
+		margin: 10px 0
+		cursor: default
+
+	.info__item
+		flex: 1
+		margin: 10px
+		color: #333
+		padding: 50px 5px
+		position: relative
+
+		.item__number 
+			background: #d30f3f
+			width: 64px
+			line-height: 64px
+			height: 64px
+			font-size: 40px
+			color: #fff
+			font-family: Helvetica
+			border-radius: 60%
+			margin: 0 auto 30px auto
+			position: relative
+
+			&:before
+				border: 2px dashed #d30f3f
+				content: ' '
+				position: absolute
+				top: -10px
+				left: -10px
+				right: -10px
+				bottom: -10px
+				@include border-radius(60%)
+
+		.item__description
+			font-family: Helvetica
+			text-align: left
+			font-size: 19px
+			font-weight: normal
+			line-height: 1.37
+
+			.description__info
+				font-weight: bold
+
+
+
+.layout__goal
+	background-color: #fff
+	padding: 80px 0
+	display: block
+	color: #333
+
+	.goal__item
+		flex: 1
+		margin: 10px
+		color: #333
+		padding: 50px 5px
+		position: relative
+
+		&--margin-right
+			margin-right: 50px
+
+		.item__title
+			text-transform: uppercase
+			cursor: default
+			font-family: GillSans
+			font-size: 22px
+			font-weight: 600
+			line-height: 1.09
+			margin-bottom: 35px
+
+		.item__description
+			font-family: Helvetica
+			font-size: 21px
+			font-weight: 300
+			line-height: 1.24
+
+		.item__image
+			position: relative
+			z-index: 1
+
+		.item__circle
+			position: absolute
+			top: -25px
+			left: -50px
+			width: 400px
+			height: 400px
+			opacity: 0.5
+			@include border-radius(60%)
+
+			&--dashed
+				border: 1px dashed #7a7a7a
+
+				&:before					
+					border: 1px dashed #7a7a7a
+
+			&:before
+				content: ''
+				position: absolute
+				top: -100px
+				left: -100px
+				right: -100px
+				bottom: -100px
+				@include border-radius(60%)
+
+
+.layout__investors
+	padding: 80px 0
+	display: block
+	color: #333
+
+	.investors__item
+		flex: 1
+		margin: 10px
+		color: #333
+		padding: 50px 5px
+		position: relative
+
+		&--right
+			display: flex
+		
+		.info
+			text-align: center
+			margin: 0 50px
+
+			&__icon 
+				margin-bottom: 40px
+				display: block
+
+			&__title
+				font-family: Helvetica
+				font-size: 37px
+				margin-bottom: 40px
+
+			&__description
+				font-family: Helvetica
+				font-size: 20px
+				font-weight: 300
+				line-height: 1.3
+
+		&--left
+			color: #fff
+			background: url(../img/investors.jpg) no-repeat
+			background-size: cover
+			padding-left: 150px
+			margin-right: 50px
+
+			.item__title
+				font-family: Gilroy
+				font-size: 30px
+				font-weight: 800
+
+			.item__description
+				font-family: Helvetica
+				font-size: 18px
+				line-height: 1.39
+				margin: 30px 0
+
+			.item__button
+				width: 260px
+				line-height: 60px
+				@include border-radius(36.5px)
+				background-image: linear-gradient(183deg, #5b36fd, #ec0e36)
+				box-shadow: 0 8px 53px 0 rgba(255, 0, 81, 0.31), inset 0 -5px 1px 0 #ad002c
+				padding-bottom: 5px
+				font-family: GillSans
+				font-size: 23px
+				font-weight: 600
+				font-style: normal
+				font-stretch: normal
+				letter-spacing: 0.1px
+				text-shadow: 0 1px 1px #9e0028
+				text-align: center
+				color: #fff
+				text-decoration: none
+				display: block
+
+.layout__tokens
+	padding: 80px 0
+	display: block
+	color: #333
+
+	.tokens__title 
+		text-align: center
+		font-family: Gilroy
+		font-size: 25px
+		font-weight: 800
+		line-height: 1.32
+		margin-bottom: 40px
+
+	.tokens__description
+		text-align: center
+		font-family: Helvetica
+		font-size: 19px
+		line-height: 1.37
+
+	.description__number
+		font-family: Helvetica
+		font-size: 28px
+		line-height: 0.93
+		color: #da3c62
+		text-shadow: 0 2px 14px rgba(0, 0, 0, 0)
+
+	.line
+		line-height: 35px
+		@include border-radius(17px)
+		background-color: #f9f9f9
+		box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.37)
+		display: inline-block
+		margin: 25px 0
+
+		&__item
+			display: inline-block
+			padding: 0 35px
+			color: #969696
+			font-family: Helvetica
+			font-size: 12px
+			font-weight: bold
+
+			&:first-child
+				@include border-radius(17px)
+				background-image: linear-gradient(to bottom, #fb2a5d, #ed4336)
+				box-shadow: 0 5px 11px 0 rgba(211, 15, 63, 0.76)
+				color: #fff
+
+	.stapes
+		.item
+			font-family: Helvetica
+			margin-top: 25px
+			margin-bottom: 65px
+			position: relative
+
+			&:nth-child(1)
+				margin-left: 110px
+			&:nth-child(2)
+				margin-left: 220px
+			&:nth-child(3)
+				margin-left: 330px
+			&:nth-child(4)
+				margin-left: 440px
+			&:nth-child(5)
+				margin-left: 550px
+			&:nth-child(6)
+				margin-left: 660px
+
+			&__title
+				display: inline-block
+				font-size: 20px
+				font-weight: 300
+				line-height: 1.5
+
+				& div
+					font-weight: bold
+
+			&__icon--true
+				display: inline-block
+				margin-left: 30px
+				width: 34px
+				height: 34px
+				background-color: #d30f3f
+				box-shadow: 0 5px 14px 0 #d30f3f
+				@include border-radius(60%)
+				position: relative
+
+				&:before
+					content: ''
+					width: 18.9px
+					height: 12px
+					border-bottom: solid 3px #ffffff
+					border-left: solid 3px #ffffff
+					position: absolute
+					transform-origin: 0 100%
+					transform: rotate(-45deg)
+					top: 12px
+					left: 15px
+
+			&__description
+				font-size: 16px
+				display: inline-block
+				position: relative
+				vertical-align: top
+				margin: 25px 0 0 200px
+				position: absolute
+				top: 0
+				left: 200px
+
+				&:before
+					content: ''
+					width: 100px
+					border-bottom: dashed 1px #979797
+					position: absolute
+					left: -125px
+					top: 10px
+
+.layout__features
+	background-color: #c5103c
+	color: #fff
+	text-align: center
+
+	.features__item
+		flex: 1
+		margin: 10px
+		color: #fff
+		padding: 50px 5px
+		position: relative
+
+		.item__icon
+			margin-bottom: 25px
+
+		.item__title
+			font-family: GillSans
+			font-size: 22px
+			font-weight: 600
+			margin-bottom: 30px
+
+		.item__description
+			font-family: Helvetica
+			font-size: 20px
+			font-weight: 300
+			line-height: 1.3
+
+.layout__sells 
+	background: url(../img/rectangle.png)
+	text-align: center
+	color: #fff
+	padding: 75px 0
+	font-family: Helvetica
+	font-size: 21px
+	font-weight: 300
+	line-height: 1.24
+
+	.layout__cell
+		max-width: 780px
+
+.layout__roadmap
+	background: #2f2f2f url(../img/roadmap.png)
+	color: #fff
+	padding-top: 100px
+	padding-bottom: 300px
+
+	.roadmap__title 
+		font-family: Gilroy
+		font-size: 35px
+		font-weight: 800
+		text-align: center
+		text-transform: uppercase
+
+	.roadmap__line
+		position: relative
+		width: 500px
+		margin: 0 auto
+
+		.roadmap__item
+			width: 500px
+			margin: 0 auto
+			text-align: center
+
+			.item__dot
+				background-color: #d30f3f
+				box-shadow: 0 5px 14px 0 #d30f3f
+				color: #fff
+				width: 30px
+				line-height: 30px
+				text-align: center
+				font-family: Helvetica
+				font-size: 19px
+				@include border-radius(60%)
+				position: absolute
+
+			.item__title
+				position: absolute
+				width: 250px
+				margin: 0 auto
+
+			&--left
+				@include border-radius(0 0 0 90px)
+				border-left: 20px solid #404040
+				border-bottom: 20px solid #404040
+				height: 150px
+				width: 50px
+				position: absolute
+				left: -70px
+				bottom: 0
+
+				.item__dot
+					left: -25px
+					top: 60px
+
+				.item__title
+					top: 60px
+					left: -275px
+
+			&--middle		
+				border-bottom: 20px solid #404040
+				padding: 50px
+				height: 150px
+
+				.item__dot
+					left: 50%
+					bottom: -5px
+
+				.item__title
+					left: 25px
+					right: 0
+					bottom: 50px
+
+			&--right
+				@include border-radius(0 90px 0 0)
+				border-top: 20px solid #404040
+				border-right: 20px solid #404040
+				height: 200px
+				width: 50px
+				position: absolute
+				right: -170px
+				bottom: -200px
+
+				.item__dot
+					right: -25px
+					top: 90px
+
+				.item__title
+					top: 60px
+					right: -300px
+
+		&:nth-child(odd)
+			.roadmap__item
+				&--left
+					bottom: -150px
+					top: inherit
+					border-bottom: 0
+					border-top: 20px solid #404040
+					@include border-radius(90px 0 0 0)
+
+				&--right
+					bottom: inherit
+					top: 50px
+					border-radius: 0 0 90px 0
+					border-bottom: 20px solid #404040
+					border-top: 0
+
+		&:last-child
+			.roadmap__item
+				&--right
+					.item__dot
+						right: -25px
+						top: inherit
+						bottom: 0px
+
+					.item__title
+						top: inherit
+						bottom: -70px
+
+.layout__modes
+	background-color: #202020
+	color: #fff
+	text-align: center
+	padding-bottom: 50px
+
+	.modes__item
+		flex: 1
+		margin: 10px
+		padding: 50px 5px
+
+		.item__title
+			font-family: GillSans
+			font-size: 20px
+			font-weight: 600
+			margin-bottom: 30px
+			text-transform: uppercase
+
+		.item__description
+			font-family: Helvetica
+			font-size: 18px
+			line-height: 1.4
+
+	.info__realisation
+		&__icon
+			font-size: 180px
+			color: #d30f3f
+			transform-origin: 50% 50%
+			transform: rotate(90deg)
+			font-family: Gilroy
+			line-height: 85px
+
+		&__text
+			font-size: 19px
+			font-family: Gilroy
+			width: 350px
+			margin: 0 auto 0
+
+.layout__garant
+	color: #333
+
+	.garant__item
+		flex: 1
+
+		.item__title
+			font-family: Gilroy
+			font-size: 25px
+			font-weight: 800
+			margin: 50px 0 60px 0
+			position: relative
+
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				bottom: -30px
+				border-bottom: 5px solid #e31f4f;
+				width: 45px
+
+		.item__description
+			font-family: Helvetica
+			font-size: 17px
+			font-weight: 300
+
+.layout__social
+	margin-top: 90px
+	margin-bottom: 100px
+	text-align: center
+
+	.social__item
+		flex: 1
+		display: inline-block
+		width: 40px
+		line-height: 40px
+		text-decoration: none
+		color: #d30f3f
+		border: 1px dashed #d30f3f
+		@include border-radius(60%)
+		margin: 10px
+		opacity: 0.75
+		transform: scale(1)
+		transition: all 200ms
+
+		&:hover
+			opacity: 1
+			transform: scale(1.1)
+
+
+.footer
+	color: #333
+	text-align: center
+	margin-bottom: 60px
+	font-family: Helvetica
+	font-size: 17px

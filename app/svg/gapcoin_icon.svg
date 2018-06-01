@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="64" viewBox="0 0 84 64">
+    <g fill="none" fill-rule="evenodd" transform="translate(3)">
+        <circle cx="49" cy="32" r="30" stroke="#F02355" stroke-width="4"/>
+        <path stroke="#F02355" stroke-dasharray="4,8" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M15.07 13.471C6.463 15.281 0 22.918 0 32.064c0 9.003 6.262 16.544 14.668 18.504 1.392.325 2.842.496 4.332.496"/>
+        <text fill="#F02355" font-family="GillSans-SemiBold, Gill Sans" font-size="32" font-weight="500" letter-spacing="2.071">
+            <tspan x="36" y="41">G</tspan>
+        </text>
+    </g>
+</svg>

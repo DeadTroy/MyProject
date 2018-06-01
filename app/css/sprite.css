@@ -1,0 +1,83 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 9.7em 53.5em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .icon.briefcase_icon:before {
+      background-position: 0em 0em;
+      width: 8.9em;
+      height: 9.3em;
+  }
+
+
+
+
+  .icon.cash_icon:before {
+      background-position: 0em -9.3em;
+      width: 7.6em;
+      height: 6.7em;
+  }
+
+
+
+
+  .icon.gamepad_icon:before {
+      background-position: 0em -16em;
+      width: 9.1em;
+      height: 6.4em;
+  }
+
+
+
+
+  .icon.gapcoin_icon:before {
+      background-position: 0em -22.4em;
+      width: 8.4em;
+      height: 6.4em;
+  }
+
+
+
+
+  .icon.growth_icon:before {
+      background-position: 0em -28.8em;
+      width: 9.7em;
+      height: 9.3em;
+  }
+
+
+
+
+  .icon.money_icon:before {
+      background-position: 0em -38.1em;
+      width: 8.5em;
+      height: 8.5em;
+  }
+
+
+
+
+  .icon.percentage_icon:before {
+      background-position: 0em -46.6em;
+      width: 7.5em;
+      height: 6.9em;
+  }
+
+
+
+
+
