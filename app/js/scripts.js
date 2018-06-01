@@ -1,4 +1,17 @@
-$(document).ready(function(){				
+function CloseModal(){
+	document.getElementsByClassName('modal-window')[0].className = "modal-window modal-window--hidden";
+	setTimeout(function(){
+		document.getElementsByClassName('modal-window')[0].className = "modal-window modal-window--closed";
+	},500)		
+}	
+function OpenModal(){
+	document.getElementsByClassName('modal-window')[0].className = "modal-window";
+	setTimeout(function(){
+		document.getElementsByClassName('modal-window')[0].className = "modal-window modal-window--visible";
+	},500)		
+}	
+
+$(document).ready(function(){			
 	$('.single-item').slick({
 		infinite: true,
 		dots: true,
@@ -22,7 +35,7 @@ $(document).ready(function(){
         }
     });
 
-    var linkNav = document.querySelectorAll('[href^="#"]'), V = 0.5;
+    var linkNav = document.querySelectorAll('[href^="#"]'), V = 0.4;
 	for(var i = 0; i < linkNav.length; i++){
 		if($(linkNav[i]).attr('data-toggle') == 'tab')continue;
 		linkNav[i].addEventListener('click', function(e){
@@ -77,7 +90,7 @@ $(document).ready(function(){
 	});
 
 
-	particlesJS("particles-js", {
+	particlesJS("about", {
 		"particles": {
 		    "number": {"value": 100,"density": {"enable": true,"value_area": 800}},
 		    "color": {"value": "#ffffff"},

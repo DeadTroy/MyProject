@@ -41,9 +41,11 @@ body
 .--visible
 	opacity: 1
 
+.layout__slider
+    margin-bottom: -5px
+
 .slider__item
 	background: #333
-	height: 906px
 	position: relative
 
 	.welcome
@@ -90,17 +92,23 @@ body
 			font-family: GillSans
 			font-size: 23px
 			font-weight: 600
-			font-style: normal
-			font-stretch: normal
 			letter-spacing: 0.1px
 			text-shadow: 0 1px 1px #9e0028
 			text-align: center
 			color: #fff
 			text-decoration: none
 			display: block
+			opacity: 1
+			transform: scale(1)
+			transition: all 200ms
+
+			&:hover
+				opacity: 0.9
+				transform: scale(1.05)
 
 .layout__row
 	position: relative
+	overflow: hidden
 
 
 .layout__cell
@@ -726,6 +734,9 @@ body
 	padding-top: 100px
 	padding-bottom: 300px
 
+	.layout__cell
+	    padding: 0 450px 0 325px
+
 	.roadmap__title 
 		font-family: Gilroy
 		font-size: 35px
@@ -735,11 +746,12 @@ body
 
 	.roadmap__line
 		position: relative
-		width: 500px
+		max-width: 500px
 		margin: 0 auto
 
 		.roadmap__item
-			width: 500px
+			max-width: 500px
+			width: 100%
 			margin: 0 auto
 			text-align: center
 
@@ -882,6 +894,9 @@ body
 	.garant__item
 		flex: 1
 
+		&--right
+			margin: 0 20px
+
 		.item__title
 			font-family: Gilroy
 			font-size: 25px
@@ -894,7 +909,7 @@ body
 				position: absolute
 				left: 0
 				bottom: -30px
-				border-bottom: 5px solid #e31f4f;
+				border-bottom: 5px solid #e31f4f
 				width: 45px
 
 		.item__description
@@ -932,3 +947,104 @@ body
 	margin-bottom: 60px
 	font-family: Helvetica
 	font-size: 17px
+
+
+.modal-window
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 1000
+	color: #333
+	transition: all 200ms
+
+	&--visible
+		opacity: 1
+
+	&--hidden
+		opacity: 0
+
+	&--opened
+		display: block
+
+	&--closed
+		display: none
+
+	&__cover
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: rgba(0,0,0,0.8)
+		z-index: 1
+
+	&__body
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		z-index: 2
+		background: #fff
+		max-width: 400px
+		margin: 0 auto
+		transform: translateY(-50%)
+		padding: 20px
+
+	&__close
+		position: absolute
+		top: 20px
+		right: 25px
+		cursor: pointer
+		width: 20px
+		height: 20px
+
+		&:before,
+		&:after
+			content: ''
+			position: absolute
+			border-bottom: 1px solid #333
+			transform-origin: 50% 100%
+			width: 20px
+			top: 9px
+
+		&:before
+			transform: rotate(45deg)
+
+		&:after
+			transform: rotate(-45deg)
+
+	.body__title
+		text-align: center
+		font-family: Gilroy
+		font-size: 20px
+		border-bottom: 1px solid #c5103c
+		padding: 10px
+		margin-bottom: 20px
+
+	.form__row
+		margin-bottom: 10px
+
+		label
+			display: block
+		
+		input
+			border: 0
+			outline: 0
+			background: #c5103c
+			color: #fff
+			padding: 10px
+			width: 100%
+			box-sizing: border-box
+		
+		button
+			width: 150px
+			text-align: center
+			color: #fff
+			background: #c5103c
+			padding: 10px
+			border: 0
+			outline: 0
+			margin: 0 auto
+			display: block
